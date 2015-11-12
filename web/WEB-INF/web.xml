@@ -3,6 +3,7 @@
     <servlet>
         <servlet-name>Display</servlet-name>
         <servlet-class>Servlets.Display</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>Display</servlet-name>
@@ -13,4 +14,7 @@
             30
         </session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>Display</welcome-file>
+    </welcome-file-list>
 </web-app>
