@@ -5,9 +5,13 @@
  */
 package Servlets;
 
+import Classes.Message;
 import Classes.Updater;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,12 +24,15 @@ import javax.servlet.http.HttpServletResponse;
 public class Display extends HttpServlet
 {
     Updater up;
-    
-    public Display()
+    Gson gson;
+
+    @Override
+    public void init(ServletConfig config) throws ServletException
     {
+        super.init(config); //To change body of generated methods, choose Tools | Templates.
+        gson = new Gson();
         up = new Updater();
         Thread t = new Thread(up);
-        
         t.start();
     }
 
@@ -45,7 +52,7 @@ public class Display extends HttpServlet
         try (PrintWriter out = response.getWriter())
         {
             /* TODO output your page here. You may use following sample code. */
-            out.println(up.getCount());
+            out.println(gson.toJson(up.getMessage()));
         }
     }
 
