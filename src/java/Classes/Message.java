@@ -27,7 +27,7 @@ public class Message
     private Vmms vmms;
     @SerializedName("if")
     @Expose
-    private If inf;
+    private Inf inf;
     @SerializedName("eng")
     @Expose
     private Eng eng;
@@ -50,7 +50,7 @@ public class Message
      * @param head
      * @param bt
      */
-    public Message(Integer bt, Head head, Vmms vmms, If inf, Eng eng, Sys sys)
+    public Message(Integer bt, Head head, Vmms vmms, Inf inf, Eng eng, Sys sys)
     {
         this.bt = bt;
         this.head = head;
@@ -111,7 +111,7 @@ public class Message
     /**
      * @return The inf
      */
-    public If getIf()
+    public Inf getInf()
     {
         return inf;
     }
@@ -119,7 +119,7 @@ public class Message
     /**
      * @param inf The if
      */
-    public void setIf(If inf)
+    public void setInf(Inf inf)
     {
         this.inf = inf;
     }
@@ -158,7 +158,7 @@ public class Message
 
 
     @Generated("org.jsonschema2pojo")
-    private class Eng
+    public class Eng
     {
 
         @SerializedName("fca")
@@ -303,7 +303,7 @@ public class Message
     }
 
     @Generated("org.jsonschema2pojo")
-    private class Head
+    public class Head
     {
 
         @SerializedName("vid")
@@ -469,50 +469,50 @@ public class Message
     }
 
     @Generated("org.jsonschema2pojo")
-    private class If
+    public class Inf
     {
 
         @SerializedName("pax")
         @Expose
-        private Integer pax;
+        private Float pax;
         @SerializedName("pay")
         @Expose
-        private Integer pay;
+        private Float pay;
         @SerializedName("paz")
         @Expose
-        private Integer paz;
+        private Float paz;
         @SerializedName("pbx")
         @Expose
-        private Integer pbx;
+        private Float pbx;
         @SerializedName("pby")
         @Expose
-        private Integer pby;
+        private Float pby;
         @SerializedName("pbz")
         @Expose
-        private Integer pbz;
+        private Float pbz;
         @SerializedName("pcx")
         @Expose
-        private Integer pcx;
+        private Float pcx;
         @SerializedName("pcy")
         @Expose
-        private Integer pcy;
+        private Float pcy;
         @SerializedName("pcz")
         @Expose
-        private Integer pcz;
+        private Float pcz;
         @SerializedName("pdx")
         @Expose
-        private Integer pdx;
+        private Float pdx;
         @SerializedName("pdy")
         @Expose
-        private Integer pdy;
+        private Float pdy;
         @SerializedName("pdz")
         @Expose
-        private Integer pdz;
+        private Float pdz;
 
         /**
          * No args constructor for use in serialization
          */
-        public If()
+        public Inf()
         {
         }
 
@@ -530,7 +530,7 @@ public class Message
          * @param pdz
          * @param pbz
          */
-        public If(Integer pax, Integer pay, Integer paz, Integer pbx, Integer pby, Integer pbz, Integer pcx, Integer pcy, Integer pcz, Integer pdx, Integer pdy, Integer pdz)
+        public Inf(Float pax, Float pay, Float paz, Float pbx, Float pby, Float pbz, Float pcx, Float pcy, Float pcz, Float pdx, Float pdy, Float pdz)
         {
             this.pax = pax;
             this.pay = pay;
@@ -545,11 +545,27 @@ public class Message
             this.pdy = pdy;
             this.pdz = pdz;
         }
+        
+        public void setAll(float[] pinData)
+        {
+            this.pax = pinData[0];
+            this.pay = pinData[1];
+            this.paz = pinData[2];
+            this.pbx = pinData[3];
+            this.pby = pinData[4];
+            this.pbz = pinData[5];
+            this.pcx = pinData[6];
+            this.pcy = pinData[7];
+            this.pcz = pinData[8];
+            this.pdx = pinData[9];
+            this.pdy = pinData[10];
+            this.pdz = pinData[11];
+        }
 
         /**
          * @return The pax
          */
-        public Integer getPax()
+        public Float getPax()
         {
             return pax;
         }
@@ -557,7 +573,7 @@ public class Message
         /**
          * @param pax The pax
          */
-        public void setPax(Integer pax)
+        public void setPax(Float pax)
         {
             this.pax = pax;
         }
@@ -565,7 +581,7 @@ public class Message
         /**
          * @return The pay
          */
-        public Integer getPay()
+        public Float getPay()
         {
             return pay;
         }
@@ -573,7 +589,7 @@ public class Message
         /**
          * @param pay The pay
          */
-        public void setPay(Integer pay)
+        public void setPay(Float pay)
         {
             this.pay = pay;
         }
@@ -581,7 +597,7 @@ public class Message
         /**
          * @return The paz
          */
-        public Integer getPaz()
+        public Float getPaz()
         {
             return paz;
         }
@@ -589,7 +605,7 @@ public class Message
         /**
          * @param paz The paz
          */
-        public void setPaz(Integer paz)
+        public void setPaz(Float paz)
         {
             this.paz = paz;
         }
@@ -597,7 +613,7 @@ public class Message
         /**
          * @return The pbx
          */
-        public Integer getPbx()
+        public Float getPbx()
         {
             return pbx;
         }
@@ -605,7 +621,7 @@ public class Message
         /**
          * @param pbx The pbx
          */
-        public void setPbx(Integer pbx)
+        public void setPbx(Float pbx)
         {
             this.pbx = pbx;
         }
@@ -613,7 +629,7 @@ public class Message
         /**
          * @return The pby
          */
-        public Integer getPby()
+        public Float getPby()
         {
             return pby;
         }
@@ -621,7 +637,7 @@ public class Message
         /**
          * @param pby The pby
          */
-        public void setPby(Integer pby)
+        public void setPby(Float pby)
         {
             this.pby = pby;
         }
@@ -629,7 +645,7 @@ public class Message
         /**
          * @return The pbz
          */
-        public Integer getPbz()
+        public Float getPbz()
         {
             return pbz;
         }
@@ -637,7 +653,7 @@ public class Message
         /**
          * @param pbz The pbz
          */
-        public void setPbz(Integer pbz)
+        public void setPbz(Float pbz)
         {
             this.pbz = pbz;
         }
@@ -645,7 +661,7 @@ public class Message
         /**
          * @return The pcx
          */
-        public Integer getPcx()
+        public Float getPcx()
         {
             return pcx;
         }
@@ -653,7 +669,7 @@ public class Message
         /**
          * @param pcx The pcx
          */
-        public void setPcx(Integer pcx)
+        public void setPcx(Float pcx)
         {
             this.pcx = pcx;
         }
@@ -661,7 +677,7 @@ public class Message
         /**
          * @return The pcy
          */
-        public Integer getPcy()
+        public Float getPcy()
         {
             return pcy;
         }
@@ -669,7 +685,7 @@ public class Message
         /**
          * @param pcy The pcy
          */
-        public void setPcy(Integer pcy)
+        public void setPcy(Float pcy)
         {
             this.pcy = pcy;
         }
@@ -677,7 +693,7 @@ public class Message
         /**
          * @return The pcz
          */
-        public Integer getPcz()
+        public Float getPcz()
         {
             return pcz;
         }
@@ -685,7 +701,7 @@ public class Message
         /**
          * @param pcz The pcz
          */
-        public void setPcz(Integer pcz)
+        public void setPcz(Float pcz)
         {
             this.pcz = pcz;
         }
@@ -693,7 +709,7 @@ public class Message
         /**
          * @return The pdx
          */
-        public Integer getPdx()
+        public Float getPdx()
         {
             return pdx;
         }
@@ -701,7 +717,7 @@ public class Message
         /**
          * @param pdx The pdx
          */
-        public void setPdx(Integer pdx)
+        public void setPdx(Float pdx)
         {
             this.pdx = pdx;
         }
@@ -709,7 +725,7 @@ public class Message
         /**
          * @return The pdy
          */
-        public Integer getPdy()
+        public Float getPdy()
         {
             return pdy;
         }
@@ -717,7 +733,7 @@ public class Message
         /**
          * @param pdy The pdy
          */
-        public void setPdy(Integer pdy)
+        public void setPdy(Float pdy)
         {
             this.pdy = pdy;
         }
@@ -725,7 +741,7 @@ public class Message
         /**
          * @return The pdz
          */
-        public Integer getPdz()
+        public Float getPdz()
         {
             return pdz;
         }
@@ -733,14 +749,14 @@ public class Message
         /**
          * @param pdz The pdz
          */
-        public void setPdz(Integer pdz)
+        public void setPdz(Float pdz)
         {
             this.pdz = pdz;
         }
     }
 
     @Generated("org.jsonschema2pojo")
-    private class Sys
+    public class Sys
     {
 
         @SerializedName("volt")
@@ -801,39 +817,39 @@ public class Message
     }
 
     @Generated("org.jsonschema2pojo")
-    private class Vmms
+    public class Vmms
     {
 
         @SerializedName("hve")
         @Expose
-        private List<Double> hve = new ArrayList<Double>();
+        private ArrayList<Double> hve = new ArrayList<>();
         @SerializedName("pit")
         @Expose
-        private List<Double> pit = new ArrayList<Double>();
+        private ArrayList<Double> pit = new ArrayList<>();
         @SerializedName("rol")
         @Expose
-        private List<Double> rol = new ArrayList<Double>();
+        private ArrayList<Double> rol = new ArrayList<>();
         @SerializedName("hed")
         @Expose
-        private List<Double> hed = new ArrayList<Double>();
+        private ArrayList<Double> hed = new ArrayList<>();
         @SerializedName("hrms")
         @Expose
         private Double hrms;
         @SerializedName("prms")
         @Expose
-        private Integer prms;
+        private Double prms;
         @SerializedName("rrms")
         @Expose
-        private Integer rrms;
+        private Double rrms;
         @SerializedName("ax")
         @Expose
-        private List<Double> ax = new ArrayList<Double>();
+        private ArrayList<Double> ax = new ArrayList<>();
         @SerializedName("ay")
         @Expose
-        private List<Double> ay = new ArrayList<Double>();
+        private ArrayList<Double> ay = new ArrayList<>();
         @SerializedName("az")
         @Expose
-        private List<Double> az = new ArrayList<Double>();
+        private ArrayList<Double> az = new ArrayList<>();
 
         /**
          * No args constructor for use in serialization
@@ -854,7 +870,7 @@ public class Message
          * @param pit
          * @param ax
          */
-        public Vmms(List<Double> hve, List<Double> pit, List<Double> rol, List<Double> hed, Double hrms, Integer prms, Integer rrms, List<Double> ax, List<Double> ay, List<Double> az)
+        public Vmms(ArrayList<Double> hve, ArrayList<Double> pit, ArrayList<Double> rol, ArrayList<Double> hed, Double hrms, Double prms, Double rrms, ArrayList<Double> ax, ArrayList<Double> ay, ArrayList<Double> az)
         {
             this.hve = hve;
             this.pit = pit;
@@ -871,7 +887,7 @@ public class Message
         /**
          * @return The hve
          */
-        public List<Double> getHve()
+        public ArrayList<Double> getHve()
         {
             return hve;
         }
@@ -879,7 +895,7 @@ public class Message
         /**
          * @param hve The hve
          */
-        public void setHve(List<Double> hve)
+        public void setHve(ArrayList<Double> hve)
         {
             this.hve = hve;
         }
@@ -887,7 +903,7 @@ public class Message
         /**
          * @return The pit
          */
-        public List<Double> getPit()
+        public ArrayList<Double> getPit()
         {
             return pit;
         }
@@ -895,7 +911,7 @@ public class Message
         /**
          * @param pit The pit
          */
-        public void setPit(List<Double> pit)
+        public void setPit(ArrayList<Double> pit)
         {
             this.pit = pit;
         }
@@ -903,7 +919,7 @@ public class Message
         /**
          * @return The rol
          */
-        public List<Double> getRol()
+        public ArrayList<Double> getRol()
         {
             return rol;
         }
@@ -911,7 +927,7 @@ public class Message
         /**
          * @param rol The rol
          */
-        public void setRol(List<Double> rol)
+        public void setRol(ArrayList<Double> rol)
         {
             this.rol = rol;
         }
@@ -919,7 +935,7 @@ public class Message
         /**
          * @return The hed
          */
-        public List<Double> getHed()
+        public ArrayList<Double> getHed()
         {
             return hed;
         }
@@ -927,7 +943,7 @@ public class Message
         /**
          * @param hed The hed
          */
-        public void setHed(List<Double> hed)
+        public void setHed(ArrayList<Double> hed)
         {
             this.hed = hed;
         }
@@ -951,7 +967,7 @@ public class Message
         /**
          * @return The prms
          */
-        public Integer getPrms()
+        public Double getPrms()
         {
             return prms;
         }
@@ -959,7 +975,7 @@ public class Message
         /**
          * @param prms The prms
          */
-        public void setPrms(Integer prms)
+        public void setPrms(Double prms)
         {
             this.prms = prms;
         }
@@ -967,7 +983,7 @@ public class Message
         /**
          * @return The rrms
          */
-        public Integer getRrms()
+        public Double getRrms()
         {
             return rrms;
         }
@@ -975,7 +991,7 @@ public class Message
         /**
          * @param rrms The rrms
          */
-        public void setRrms(Integer rrms)
+        public void setRrms(Double rrms)
         {
             this.rrms = rrms;
         }
@@ -983,7 +999,7 @@ public class Message
         /**
          * @return The ax
          */
-        public List<Double> getAx()
+        public ArrayList<Double> getAx()
         {
             return ax;
         }
@@ -991,7 +1007,7 @@ public class Message
         /**
          * @param ax The ax
          */
-        public void setAx(List<Double> ax)
+        public void setAx(ArrayList<Double> ax)
         {
             this.ax = ax;
         }
@@ -999,7 +1015,7 @@ public class Message
         /**
          * @return The ay
          */
-        public List<Double> getAy()
+        public ArrayList<Double> getAy()
         {
             return ay;
         }
@@ -1007,7 +1023,7 @@ public class Message
         /**
          * @param ay The ay
          */
-        public void setAy(List<Double> ay)
+        public void setAy(ArrayList<Double> ay)
         {
             this.ay = ay;
         }
@@ -1015,7 +1031,7 @@ public class Message
         /**
          * @return The az
          */
-        public List<Double> getAz()
+        public ArrayList<Double> getAz()
         {
             return az;
         }
@@ -1023,7 +1039,7 @@ public class Message
         /**
          * @param az The az
          */
-        public void setAz(List<Double> az)
+        public void setAz(ArrayList<Double> az)
         {
             this.az = az;
         }
